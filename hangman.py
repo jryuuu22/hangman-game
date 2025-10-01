@@ -1,5 +1,5 @@
 import random
-#Using word txt as a list of words for hangman
+#Using word.txt as a list of words for hangman
 with open('words.txt', "r") as word_list:
     words = word_list.read().split(' ')
 chosen_word = random.choice(words)
@@ -31,7 +31,7 @@ while not end_of_game:
         if letter == guess:
             display[position] = letter
 
-    #Check if user is wrong.
+    #Check if the user is wrong.
     if guess not in chosen_word:
         #TODO-5: - If the letter is not in the chosen_word, print out the letter and let them know it's not in the word.
         print(f"Incorrect Letters: {guess}")
@@ -44,7 +44,7 @@ while not end_of_game:
     #Join all the elements in the list and turn it into a String.
     print(f"{' '.join(display)}")
 
-    #Check if user has got all letters.
+    #Check if the user has got all the letters.
     if "_" not in display:
         end_of_game = True
         print("You win.")
