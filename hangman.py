@@ -1,6 +1,8 @@
 import random
-hangman_words = ["cake", "school", "black", "diamond", "almond", "amazing", "flying"]
-chosen_word = random.choice(hangman_words)
+#Using word txt as a list of words for hangman
+with open('words.txt', "r") as word_list:
+    words = word_list.read().split(' ')
+chosen_word = random.choice(words)
 word_length = len(chosen_word)
 
 end_of_game = False
