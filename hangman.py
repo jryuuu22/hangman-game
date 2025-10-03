@@ -5,6 +5,9 @@ with open("words.txt", "r") as f:
     words = [line.strip() for line in f if line.strip()]
 chosen_word = random.choice(words)
 word_length = len(chosen_word)
+while word_length < 5:
+    chosen_word = random.choice(words)
+    word_length = len(chosen_words)
 
 end_of_game = False
 lives = 6
@@ -13,8 +16,6 @@ lives = 6
 print("You have 6 lives")
 secret = "_"*word_length
 print(f'Guess the word {secret} The word is {word_length} long.')
-while len(chosen_word) < int(3):
-    chosen_word = random.choice(words)
 
 #Create blanks
 display = []
